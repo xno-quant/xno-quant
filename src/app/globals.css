@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 257 100% 99%; /* #F9F9FF - Almost white purple */
+    --foreground: 251 25% 18%; /* #262333 */
+
+    --card: 257 100% 100%; /* #FFFFFF */
+    --card-foreground: 251 25% 18%;
+
+    --popover: 257 100% 100%;
+    --popover-foreground: 251 25% 18%;
+
+    --primary: 167 69% 39%; /* #1FAD8E - Neo Green */
+    --primary-foreground: 167 69% 98%; /* Lighter shade for text on primary */
+
+    --secondary: 248 100% 69%; /* #7B61FF - XNO Purple */
+    --secondary-foreground: 257 100% 99%;
+
+    --muted: 252 100% 97%; /* #E9E8FF - Light Purple */
+    --muted-foreground: 250 14% 45%; /* #68647A */
+    
+    --accent: 251 89% 70%; /* A lighter purple for accent */
+    --accent-foreground: 251 25% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 255 33% 91%; /* #E4E2ED */
+    --input: 255 33% 91%;
+    --ring: 167 69% 39%; /* Neo Green for ring */
+
+    --chart-1: 167 69% 39%;
+    --chart-2: 248 100% 69%;
+    --chart-3: 251 89% 70%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 251 25% 12%; /* #1A1822 - Dark Purple/Charcoal */
+    --foreground: 252 100% 97%; /* #E9E8FF */
+
+    --card: 251 22% 16%; /* #221F2E */
+    --card-foreground: 252 100% 97%;
+
+    --popover: 251 25% 12%;
+    --popover-foreground: 252 100% 97%;
+
+    --primary: 167 69% 45%; /* Brighter Neo Green for dark mode #2CC9A8 */
+    --primary-foreground: 251 25% 12%;
+
+    --secondary: 248 100% 69%; /* #7B61FF */
+    --secondary-foreground: 257 100% 99%;
+
+    --muted: 250 30% 25%; /* #352F47 */
+    --muted-foreground: 250 14% 65%; /* #9B98A8 */
+
+    --accent: 251 89% 70%;
+    --accent-foreground: 251 25% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 250 30% 25%;
+    --input: 250 30% 25%;
+    --ring: 167 69% 45%;
+
+    --chart-1: 167 69% 45%;
+    --chart-2: 248 100% 69%;
+    --chart-3: 251 89% 70%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  section {
+    @apply py-12 md:py-20 lg:py-24;
+  }
+  .prose p {
+    @apply my-4;
+  }
+  .prose ul, .prose ol {
+    @apply my-4;
+  }
+}

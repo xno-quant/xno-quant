@@ -1,0 +1,40 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Rules for registrations collection
+    match /registrations/{document} {
+      // Allow Firebase Admin SDK to read and write (server-side)
+      allow read, write: if request.auth != null;
+      // Admin users can read all registrations
+      allow read: if request.auth != null && request.auth.token.email in [
+        'mrthinh360@gmail.com'
+      ];
+    }
+    
+    // Rules for feedbacks collection
+    match /feedbacks/{document} {
+      // Allow Firebase Admin SDK to read and write (server-side)
+      allow read, write: if request.auth != null;
+      // Admin users can read all feedbacks
+      allow read: if request.auth != null && request.auth.token.email in [
+        'mrthinh360@gmail.com'
+      ];
+    }
+    
+    // Rules for checkins collection
+    match /checkins/{document} {
+      // Allow Firebase Admin SDK to read and write (server-side)
+      allow read, write: if request.auth != null;
+      // Admin users can read all checkins
+      allow read: if request.auth != null && request.auth.token.email in [
+        'mrthinh360@gmail.com'
+      ];
+    }
+
+    // Default deny all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
