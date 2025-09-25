@@ -39,12 +39,9 @@ const nextConfig: NextConfig = {
         hostname: 'upload.wikimedia.org',
         port: '',
         pathname: '/**',
-      },
+      }
     ],
   },
-
-  // 👇 Thêm dòng này để build ra static site
-  output: 'export',
 };
 
 export default nextConfig;
