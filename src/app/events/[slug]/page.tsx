@@ -9,6 +9,7 @@ import FeedbackForm from '@/components/sections/feedback-form';
 import EventRecap from '@/components/sections/event-recap';
 import EventGallery from '@/components/sections/event-gallery';
 import EventLocation from '@/components/sections/event-location';
+import EventMaterials from '@/components/sections/event-materials';
 import { getEventById, getAllEventIds } from '@/lib/events';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -31,6 +32,7 @@ export default async function EventPage({ params }: { params: { slug: string } }
       <EventAbout event={event} />
       <EventSpeakers event={event} />
       <EventSchedule event={event} />
+      <EventMaterials event={event} />
       {event.isPast && <EventRecap event={event} />}
       {event.isPast && <EventGallery event={event} />}
       {event.isPast ? (

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận đăng ký - XNO Quant Workshop</title>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .header img {
+            max-width: 120px;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1FAD8E;
+            color: white !important;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: background 0.3s ease;
+            font-size: 16px;
+        }
+
+        .cta-button:hover {
+            background: #16a085;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+        .highlight {
+            color: #1FAD8E;
+            font-weight: 600;
+        }
+
+        .simple-text {
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://xno.vn/_next/image?url=%2Flogo.png&w=256&q=75" alt="XNO Quant Logo">
+        </div>
+
+        <img src="{{coverImage}}" alt="Workshop Cover" class="cover-image">
+
+        <div class="content">
+            <h2>Chào <span class="highlight">{{name}}</span>,</h2>
+
+            <div class="simple-text">
+                <p>⏰ Chỉ còn chưa tới <strong>2 ngày nữa</strong> là Workshop <span
+                        class="highlight">{{eventTitle}}</span> sẽ diễn ra!</p>
+                <p>{{customText}}</p>
+
+                <p><strong>Thông tin Workshop:</strong><br>
+                    📅 Thời gian: {{eventDate}}<br>
+                    📍 Địa điểm: {{eventLocation}}</p>
+
+                <p>Chúng tôi rất mong được gặp bạn tại sự kiện. Đây sẽ là cơ hội tuyệt vời để học hỏi, kết nối và phát
+                    triển kỹ năng giao dịch định lượng cùng cộng đồng XNO Quant.</p>
+            </div>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{{eventUrl}}" class="cta-button">📖 Trang thông tin Workshop</a>
+                <a href="{{calendarUrl}}" class="cta-button">📅 Thêm vào lịch Google</a>
+            </div>
+
+            <div class="simple-text">
+                <p><em>Trang thông tin sự kiện cung cấp đầy đủ lịch trình, chỉ đường, thông tin diễn giả và các nội dung
+                        hữu ích.</em></p>
+            </div>
+
+            <p style="margin-top: 30px;">
+                Hẹn gặp lại bạn tại Workshop!<br>
+                <strong class="highlight">XNO Quant & AI</strong><br>
+                <small>Nơi hiện thực hóa ý tưởng giao dịch của bạn thành bot tự động</small>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; {{year}} XNO Quant</p>
+            <p><small>Email này được gửi để xác nhận đăng ký của bạn. Nếu bạn có thắc mắc, vui lòng liên hệ với chúng
+                    tôi.</small></p>
+        </div>
+    </div>
+</body>
+
+</html>

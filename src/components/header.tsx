@@ -162,7 +162,7 @@ const Header = () => {
                      <SheetTitle className="sr-only">Menu</SheetTitle>
                   </SheetHeader>
                   <nav className="flex flex-col gap-1">
-                    {[...contextualNavLinks, ...mainNavLinks].map((link, index) => (
+                    {[...mainNavLinks, ...contextualNavLinks].map((link, index) => (
                       <SheetTrigger asChild key={link.href + index}>
                         <Link href={link.href} className="flex items-center justify-between gap-2 text-lg font-medium text-muted-foreground transition-colors hover:text-primary rounded-md px-3 py-3 hover:bg-muted">
                            <div className='flex items-center gap-4'>

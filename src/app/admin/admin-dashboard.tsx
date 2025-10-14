@@ -1,8 +1,8 @@
 
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
-import { useFormStatus } from "react-dom";
+import { useEffect, useState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { getFeedback, getRegistrations } from "./actions";
 import { useAuth } from "@/context/auth-context";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import type { Event } from "@/lib/events";
 import { Loader2, Download, Clipboard, ClipboardCheck, Users, MessageSquare } from "lucide-react";
 
-const initialState = {
+const initialState: any = {
   type: "",
   message: "",
   data: null,
@@ -68,8 +68,8 @@ const objectToCsv = (data: any[]) => {
 
 export default function AdminDashboard({ events }: { events: Event[] }) {
   const { user, isAdmin, loading } = useAuth();
-  const [registrationsState, registrationsAction] = useActionState(getRegistrations, initialState);
-  const [feedbackState, feedbackAction] = useActionState(getFeedback, initialState);
+  const [registrationsState, registrationsAction] = useFormState(getRegistrations, initialState);
+  const [feedbackState, feedbackAction] = useFormState(getFeedback, initialState);
   const { toast } = useToast();
 
   const [selectedEvent, setSelectedEvent] = useState<string>('');

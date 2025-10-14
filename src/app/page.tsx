@@ -7,6 +7,7 @@ import EventSchedule from '@/components/sections/event-schedule';
 import RegistrationForm from '@/components/sections/registration-form';
 import FeedbackForm from '@/components/sections/feedback-form';
 import EventLocation from '@/components/sections/event-location';
+import EventMaterials from '@/components/sections/event-materials';
 import { getLatestEvent, getPastSpeakers } from '@/lib/events';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -33,6 +34,7 @@ export default async function Home() {
       <EventAbout event={latestEvent} />
       <EventSpeakers event={latestEvent} pastSpeakers={pastSpeakers} />
       <EventSchedule event={latestEvent} />
+      <EventMaterials event={latestEvent} />
       {latestEvent.isPast ? (
         <FeedbackForm eventId={latestEvent.id} />
       ) : (

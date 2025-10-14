@@ -64,6 +64,8 @@ export interface Event {
   format?: 'Online' | 'Offline';
   duration?: number;
   enableCalendar?: boolean;
+  slideUrl?: string;
+  videoUrl?: string;
 }
 
 const contentDirectory = path.join(process.cwd(), 'content');
@@ -139,6 +141,8 @@ async function getEventData(fileName: string): Promise<Event> {
     format: eventData.format || 'Offline',
     duration: eventData.duration || 120,
     enableCalendar: eventData.enableCalendar || false,
+    slideUrl: eventData.slideUrl,
+    videoUrl: eventData.videoUrl,
   };
 }
 
@@ -186,8 +190,6 @@ export async function getSpeakerWithEvents(speakerId: string): Promise<Speaker |
 export async function getPastSpeakers(): Promise<Speaker[]> {
   const allEvents = await getAllEvents();
   const pastEvents = allEvents.filter(event => event.isPast);
-  const latestEvent = await getLatestEvent();
-  const latestSpeakerIds = latestEvent ? new Set(latestEvent.speakers.map(s => s.id)) : new Set();
 
   const speakerMap = new Map<string, Speaker>();
 
@@ -211,6 +213,7 @@ export async function getPastSpeakers(): Promise<Speaker[]> {
   // Sort by position ascending (1, 2, 3...)
   return allPastSpeakers.sort((a, b) => (a.position || 99) - (b.position || 99));
 }
+
 
 export async function getEventById(id: string): Promise<Event | undefined> {
   const fileNames = fs.readdirSync(eventsDirectory);

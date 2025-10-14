@@ -249,7 +249,7 @@ NEXT_PUBLIC_STATIC_MODE=false
 
 5. **Quyền truy cập:**
    - Firebase Admin SDK có quyền ghi/đọc tất cả collections
-   - Admin user (mrthinh360@gmail.com) có thể xem tất cả dữ liệu
+   - Admin user (mrt) có thể xem tất cả dữ liệu
    - User thường chỉ có thể đọc/ghi dữ liệu của mình khi đã đăng nhập
 
 ### 4.4. Cấu hình Brevo Email

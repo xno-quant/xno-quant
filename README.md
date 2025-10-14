@@ -103,10 +103,33 @@ Toàn bộ logic, cấu hình, và hướng dẫn chi tiết đã được ghi l
 - Cấu hình Firestore, Brevo, Discord
 - Email template, brand colors
 
-## 3. Một số lưu ý
+## 3. Email Marketing Scripts
+
+Dự án có hệ thống script gửi email marketing hàng loạt cho danh sách khách hàng:
+
+### 3.1. Chuẩn bị dữ liệu
+- Tạo file `/data/email-list.json` với danh sách email (xem format tại `/data/README.md`)
+- Chia thành 3 nhóm: `past-attendee`, `registered-only`, `new-prospect`
+- Mỗi user có thể có `customText` riêng
+
+### 3.2. Chạy script marketing
+```bash
+# Cập nhật thông tin sự kiện trong scripts/send-marketing-emails.js
+node scripts/send-marketing-emails.js
+```
+
+### 3.3. Template emails
+- `past-attendee-invite.html`: Khách cũ đã tham gia workshop trước
+- `registered-only-invite.html`: Khách đã đăng ký nhưng chưa tham gia
+- `new-prospect-invite.html`: Khách mới hoàn toàn
+
+> Chi tiết sử dụng scripts xem tại [scripts/README.md](scripts/README.md)
+
+## 4. Một số lưu ý
 - Khi deploy lên môi trường production, kiểm tra lại biến môi trường và security rules
 - Đảm bảo IP server đã được thêm vào Brevo nếu dùng email tự động
 - Nếu dùng chế độ static (`NEXT_PUBLIC_STATIC_MODE=true`), các tính năng backend sẽ bị vô hiệu hóa
+- File `/data/` đã được ignore trong Git để bảo vệ thông tin khách hàng
 
 ---
 Mọi thắc mắc hoặc lỗi phát sinh, vui lòng xem log, kiểm tra lại các bước trên hoặc liên hệ admin qua Discord.

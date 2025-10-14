@@ -8,7 +8,6 @@ import { sendDiscordNotification } from "@/lib/discord";
 import type { Event } from "@/lib/events";
 import { getEventById, getLatestEvent } from "@/lib/events";
 import { sendRegistrationConfirmationEmail } from "@/lib/email";
-import { generateEventContent } from "@/ai/flows/generate-event-content";
 import { generateEventCalendarUrl } from "@/lib/calendar";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
@@ -259,47 +258,6 @@ export async function submitFeedback(prevState: any, formData: FormData) {
     return {
       type: "error" as const,
       message: "Đã xảy ra lỗi không mong muốn khi gửi phản hồi.",
-    };
-  }
-}
-
-const generateContentSchema = z.object({
-  eventName: z.string().min(1, "Tên sự kiện không được để trống"),
-  eventTopic: z.string().min(1, "Chủ đề sự kiện không được để trống"),
-});
-
-export async function generateContentAction(prevState: any, formData: FormData) {
-  const isStaticMode = process.env.NEXT_PUBLIC_STATIC_MODE === 'true';
-  if (isStaticMode) {
-    return { type: 'error', message: 'Tính năng AI bị vô hiệu hóa ở chế độ tĩnh.' };
-  }
-
-  try {
-    const validatedFields = generateContentSchema.safeParse({
-      eventName: formData.get("eventName"),
-      eventTopic: formData.get("eventTopic"),
-    });
-
-    if (!validatedFields.success) {
-      return {
-        type: "error" as const,
-        message: "Dữ liệu không hợp lệ.",
-        errors: validatedFields.error.flatten().fieldErrors,
-      };
-    }
-
-    const result = await generateEventContent(validatedFields.data);
-
-    return {
-      type: "success" as const,
-      message: "Nội dung đã được tạo thành công.",
-      data: result,
-    };
-  } catch (e) {
-    console.error("Lỗi tạo nội dung AI:", e);
-    return {
-      type: "error" as const,
-      message: "Đã xảy ra lỗi khi tạo nội dung. Vui lòng thử lại.",
     };
   }
 }

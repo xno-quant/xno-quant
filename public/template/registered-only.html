@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cơ hội không thể bỏ lỡ từ XNO Quant</title>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .header img {
+            max-width: 120px;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1FAD8E;
+            color: white !important;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: background 0.3s ease;
+            font-size: 16px;
+        }
+
+        .cta-button:hover {
+            background: #16a085;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+        .highlight {
+            color: #1FAD8E;
+            font-weight: 600;
+        }
+
+        .simple-text {
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .urgency-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://xno.vn/_next/image?url=%2Flogo.png&w=256&q=75" alt="XNO Quant Logo">
+        </div>
+
+        <img src="{{coverImage}}" alt="Workshop Cover" class="cover-image">
+
+        <div class="content">
+            <h2>Chào <span class="highlight">{{name}}</span>,</h2>
+
+            <div class="simple-text">
+                <p>🎯 <strong>Đừng bỏ lỡ cơ hội này!</strong></p>
+                <p>{{customText}}</p>
+
+                <p><strong>{{eventTitle}}</strong><br>
+                    📅 {{eventDate}}<br>
+                    📍 {{eventLocation}}</p>
+            </div>
+
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{{eventUrl}}" class="cta-button">🎯 Đăng ký ngay - MIỄN PHÍ</a>
+            </div>
+
+            <div class="simple-text">
+                <p><strong>Rất tiếc lần trước bạn chưa thể tham dự!</strong></p>
+                <p>Lần này, chúng tôi rất mong được gặp bạn tại sự kiện để cùng nhau trao đổi ý tưởng, chia sẻ kinh
+                    nghiệm, kết nối với bạn mới và học hỏi từ các chuyên gia.</p>
+                <p>Sự kiện là nơi networking, gặp gỡ cộng đồng giao dịch định lượng, cùng nhau phát triển và truyền cảm
+                    hứng.</p>
+            </div>
+
+            <p style="margin-top: 30px;">
+                Trân trọng,<br>
+                <strong class="highlight">XNO Quant & AI</strong><br>
+                <small>Nơi hiện thực hóa ý tưởng giao dịch của bạn thành bot tự động</small>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; {{year}} XNO Quant</p>
+            <p><small>Nếu bạn không muốn nhận email này nữa, <a href="{{unsubscribeUrl}}" style="color: #1FAD8E;">vui
+                        lòng bấm
+                        vào
+                        đây</a>.</small></p>
+        </div>
+    </div>
+</body>
+
+</html>

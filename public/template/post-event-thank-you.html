@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm ơn bạn đã tham gia Workshop - XNO Quant</title>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            color: inherit;
+        }
+
+        .header img {
+            max-width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1FAD8E;
+            color: white !important;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(31, 173, 142, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #16a085;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(31, 173, 142, 0.4);
+        }
+
+        .secondary-button {
+            background: #8B5CF6;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .secondary-button:hover {
+            background: #7C3AED;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+        .highlight {
+            color: #1FAD8E;
+            font-weight: 600;
+        }
+
+        .simple-text {
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .thank-you-section {
+            background: linear-gradient(135deg, #f8faff, #e8f5ff);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #1FAD8E;
+        }
+
+        .resources-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .emoji {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://xno.vn/_next/image?url=%2Flogo.png&w=256&q=75" alt="XNO Quant Logo">
+        </div>
+
+        <img src="https://quant-events.netlify.app/images/email-cover-workshop-3-survey.jpg" alt="Workshop Thank You"
+            class="cover-image">
+
+        <div class="content">
+            <h2>Xin chào <span class="highlight">{{name}}</span>,</h2>
+
+            <div class="thank-you-section">
+                <p><strong>XNO Quant & AI</strong> chân thành cảm ơn bạn đã tham gia <strong>Workshop #3: Ứng Dụng AI
+                        Trong Dự Báo Biến Động Thị Trường</strong>! 🚀</p>
+
+                <p>Sự hiện diện và những chia sẻ tích cực của bạn đã góp phần tạo nên một buổi workshop đầy ý nghĩa và
+                    thành công rực rỡ!</p>
+            </div>
+
+            <div class="simple-text">
+                <p>Chúng tôi hy vọng những kiến thức từ <strong class="highlight">TS. Hà Xuân Sơn</strong> - Giảng viên
+                    & Nghiên cứu viên tại <strong>Trường Đại học RMIT</strong> đã mang đến cho bạn những góc nhìn mới mẻ
+                    và thực tiễn về ứng dụng AI & Machine Learning trong dự báo biến động thị trường tài chính.</p>
+            </div>
+
+            <div class="resources-section">
+                <div class="section-title">
+                    <span class="emoji">📚</span>
+                    Tài liệu Workshop để bạn ôn tập
+                </div>
+                <p>Để bạn có thể xem lại và tiếp tục nghiên cứu sâu hơn:</p>
+                <ul>
+                    <li>🎥 <strong>Video ghi hình buổi Workshop</strong></li>
+                    <li>📄 <strong>Slide trình bày chi tiết</strong></li>
+                </ul>
+            </div>
+
+            <div class="button-container">
+                <a href="{{eventUrl}}" class="cta-button">
+                    📖 Xem lại tài liệu Workshop
+                </a>
+            </div>
+
+            <div class="resources-section">
+                <div class="section-title">
+                    <span class="emoji">💭</span>
+                    Chia sẻ cảm nhận của bạn
+                </div>
+                <p>Để XNO Quant & AI tiếp tục mang đến những workshop chất lượng và giá trị hơn nữa, chúng tôi rất mong
+                    nhận được phản hồi chân thành từ bạn!</p>
+            </div>
+
+            <div class="button-container">
+                <a href="{{feedbackUrl}}" class="cta-button secondary-button">
+                    ⭐ Gửi phản hồi
+                </a>
+            </div>
+
+            <div class="simple-text">
+                <div class="section-title">
+                    <span class="emoji">🚀</span>
+                    Cùng XNO Quant & AI chinh phục thị trường tài chính
+                </div>
+                <p>Nếu có bất kỳ câu hỏi nào hoặc cần hỗ trợ, hãy tham gia:</p>
+                <ul>
+                    <li>💬 <strong>Nhóm hỗ trợ Zalo</strong> - <a href="https://zalo.me/g/vysbax694"
+                            style="color:#1FAD8E;text-decoration:underline;" target="_blank">Kết nối trực tiếp</a></li>
+                    <li>🌟 <strong>Cộng đồng Quant & AI Việt Nam</strong> - <a
+                            href="https://www.facebook.com/groups/xnoquant.vn"
+                            style="color:#8B5CF6;text-decoration:underline;" target="_blank">Chia sẻ & học hỏi</a></li>
+                </ul>
+            </div>
+
+            <div class="thank-you-section">
+                <p>Một lần nữa, <strong>cảm ơn bạn</strong> và hẹn gặp lại trong các workshop tiếp theo! 🎯</p>
+                <p><em>"Cùng nhau, chúng ta sẽ biến những ý tưởng giao dịch thành hiện thực!"</em></p>
+            </div>
+
+            <p style="margin-top: 30px;">
+                Trân trọng,<br>
+                <strong class="highlight">Đội ngũ XNO Quant & AI</strong><br>
+                <small>Nơi hiện thực hóa ý tưởng giao dịch của bạn thành bot tự động</small>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; {{year}} XNO Quant & AI</p>
+            <p><small>Nếu bạn không muốn nhận email này nữa, <a href="{{unsubscribeUrl}}" style="color: #1FAD8E;">vui
+                        lòng bấm vào đây</a>.</small></p>
+        </div>
+    </div>
+</body>
+
+</html>

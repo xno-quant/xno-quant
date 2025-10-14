@@ -4,7 +4,7 @@
 import Link from "next/link";
 import type { Event } from "@/lib/events";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Sparkles, Mouse, Video, Users, CheckCircle } from "lucide-react";
+import { Calendar, MapPin, Sparkles, Mouse, Video, Users, CheckCircle, FolderArchive } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { useEventTimeStates } from "@/hooks/use-checkin-time";
@@ -14,6 +14,8 @@ import AddToCalendarButton from "@/components/add-to-calendar-button";
 const EventHero = ({ event }: { event: Event }) => {
   const heroImage = event.image || "https://images.unsplash.com/photo-1640459958548-56c1c6717a40?q=80&w=1470&auto=format&fit=crop";
   const eventStates = useEventTimeStates(event);
+
+  const hasMaterials = !!(event.slideUrl || event.videoUrl);
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -63,20 +65,39 @@ const EventHero = ({ event }: { event: Event }) => {
         {eventStates.isBeforeEvent && <CountdownTimer eventDate={event.date} />}
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <Button asChild size="lg" className={eventStates.isCheckinTime ? 'animate-pulse shadow-lg shadow-primary/20 bg-primary hover:bg-primary/90' : eventStates.isAfterEvent ? 'bg-primary hover:bg-primary/90' : ''}>
-            <Link href={eventStates.isCheckinTime ? '/checkin' : eventStates.isAfterEvent ? '#feedback-section' : '#form'}>
-              {eventStates.isAfterEvent ? (
-                'Gửi phản hồi'
-              ) : eventStates.isCheckinTime ? (
-                <>
-                  <CheckCircle className="w-5 h-5 mr-2" />
-                  Check-in sự kiện
-                </>
-              ) : (
-                'Đăng ký ngay'
+          {eventStates.isAfterEvent ? (
+            // After event
+            <>
+              <Button asChild size="lg">
+                <Link href="#feedback-section">
+                  Gửi phản hồi
+                </Link>
+              </Button>
+              {hasMaterials && (
+                <Button asChild size="lg" variant="outline" className="text-primary border-primary hover:bg-purple-400 hover:text-white hover:border-transparent">
+                  <Link href="#materials">
+                    <FolderArchive className="mr-2" />
+                    Xem tài liệu
+                  </Link>
+                </Button>
               )}
-            </Link>
-          </Button>
+            </>
+          ) : eventStates.isCheckinTime ? (
+            // During check-in time
+            <Button asChild size="lg" className="animate-pulse shadow-lg shadow-primary/20 bg-primary hover:bg-primary/90">
+              <Link href="/checkin">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                Check-in sự kiện
+              </Link>
+            </Button>
+          ) : (
+            // Before event (registration time)
+            <Button asChild size="lg">
+              <Link href="#form">
+                Đăng ký ngay
+              </Link>
+            </Button>
+          )}
 
           {/* Add to Calendar Button - only show before event starts */}
           {eventStates.showCalendarButton && (
