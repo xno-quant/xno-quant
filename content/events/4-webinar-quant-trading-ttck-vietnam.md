@@ -30,16 +30,11 @@ schedule:
     title: "Cơ hội & thách thức cho Quant Trading tại VN"
     description: "Phân tích tiềm năng, rào cản và xu hướng phát triển Quant Trading tại Việt Nam."
   - time: "10:45"
-    title: "Giới thiệu cộng đồng Quant & AI, tầm nhìn phát triển"
-    description: "Kết nối cộng đồng, chia sẻ định hướng và cơ hội hợp tác."
+    title: "Phương pháp luận trong đầu tư định lượng tại Việt Nam"
+    description: "Quant Trading, đầu tư chứng khoán theo góc nhìn khoa học."
   - time: "11:00"
     title: "Q&A và kết nối"
     description: "Giao lưu, hỏi đáp trực tiếp với diễn giả"
 ---
 
 Tham gia webinar đầu tiên trong chuỗi chia sẻ hàng tuần của XNO Quant về "Giao Dịch Định Lượng Thực Chiến", nơi cộng đồng sẽ cùng khám phá cách Quant Trading và AI đang thay đổi thị trường chứng khoán Việt Nam. Sự kiện này là cơ hội để bạn tiếp cận kiến thức thực tiễn, kết nối với chuyên gia và cộng đồng đam mê công nghệ tài chính, mở rộng tư duy đầu tư hiện đại. Đăng ký ngay và tham gia cộng đồng Quant & AI để không bỏ lỡ những chủ đề hấp dẫn, cập nhật xu hướng mới và xây dựng mạng lưới kết nối chất lượng trong lĩnh vực Quant & AI!
-
-
-
-
-
